@@ -1,26 +1,29 @@
-# Lama Dev School Management Dashboard
+Student Management System
 
-## Getting Started
+Overview
 
-First, run the development server:
+This is a Student Management System built with Next.js. The system allows users to manage student records, including adding, editing, deleting, and viewing student information.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Authentication (Login/Register)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Role-based Access Control (Admin, Teacher, Student)
 
-## Learn More
+Manage student records (CRUD operations)
 
-To learn more about Next.js, take a look at the following resources:
+Pagination and filtering
 
-- [Lama Dev Youtube Channel](https://youtube.com/lamadev) 
-- [Next.js](https://nextjs.org/learn)
+Responsive UI with Tailwind CSS
+
+API integration with Prisma and PostgreSQL
+
+Server-side rendering (SSR) and Static Site Generation (SSG) support
+
+Tech Stack
+
+Frontend: Next.js, React, Tailwind CSS
+
+Backend: Next.js API Routes, Prisma ORM
+
+Database: PostgreSQL
