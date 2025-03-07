@@ -30,7 +30,7 @@ const CountChart = () => {
                 <Image src={'/moreDark.png'} alt='moreDark' width={20} height={20} />
             </div>
             {/* chart */}
-            <div className='w-full h-[75%] relative'>
+            <div className='w-full h-[70%] relative'>
                 <ResponsiveContainer>
                     <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="100%" barSize={30} data={data}>
                         <RadialBar
