@@ -15,3 +15,74 @@
 .react-calendar__month-view__weekdays__weekday abbr{
     text-decoration: none !important;
 }
+
+.rbc-btn-group:first-child{
+    display: none !important;
+}
+
+.rbc-toolbar-label{
+    text-align: right !important;
+    padding: 0px 20px;
+}
+
+.rbc-btn-group:last-child{
+    font-size: 13px !important;
+}
+
+.rbc-btn-group:last-child button{
+    border: none !important;
+    background-color: #f1f0ff !important;
+    margin-left: 2px !important;
+}
+
+.rbc-toolbar button.rbc-active{
+    background-color: #dbdafe !important;
+    box-shadow: none !important;
+}
+
+.rbc-time-view{
+    border-color: #eee !important;
+}
+
+/* .rbc-time-header{
+    display: none !important;
+} */
+
+.rbc-allday-cell{
+display: none;
+}
+
+.rbc-time-content{
+    border: none !important;
+}
+
+.rbc-time-gutter.rbc-time-column{
+    font-size: 12px !important;
+}
+
+.rbc-time-gutter.rbc-time-column .rbc-timeslot-group{
+    padding: 8px 0px 0px 0px !important;
+}
+
+.rbc-event-label{
+    font-size: 10px !important;
+    margin-top: 6px !important;
+}
+
+.rbc-event-content{
+    font-size: 10px !important;
+    margin-top: 8px !important;
+    font-weight: 600 !important;
+}
+
+.rbc-event{
+    margin-top: 5px !important;
+    border: none !important;
+    outline: none !important;
+    color: black !important;
+    background-color: #e2f8ff !important;
+}
+
+.rbc-current-time-indicator{
+    display: none !important;
+}
