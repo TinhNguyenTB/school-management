@@ -15,16 +15,14 @@ const Menu = () => {
             {i.items.map(item => {
               if (item.visible.includes(role)) {
                 return (
-                  (
-                    <Link key={item.icon} href={item.label}
-                      className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-mySkyLight"
-                    >
-                      <Image src={item.icon} alt={item.label} width={20} height={20} />
-                      <span className="hidden lg:block">
-                        {item.label}
-                      </span>
-                    </Link>
-                  )
+                  <Link key={item.icon} href={item.href}
+                    className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 md:px-2 rounded-md hover:bg-mySkyLight"
+                  >
+                    <Image src={item.icon} alt={item.label} width={20} height={20} />
+                    <span className="hidden lg:block">
+                      {item.label}
+                    </span>
+                  </Link>
                 )
               }
             })}
