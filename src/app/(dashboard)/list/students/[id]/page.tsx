@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-export default function SingleTeacherPage() {
+export default function SingleStudentPage() {
     return (
         <div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
             {/* left */}
@@ -21,7 +21,7 @@ export default function SingleTeacherPage() {
                             />
                         </div>
                         <div className="w-2/3 flex flex-col justify-between gap-4">
-                            <h1 className="text-xl font-semibold">Alice Ever</h1>
+                            <h1 className="text-xl font-semibold">Leonard Snyder</h1>
                             <p className="text-sm text-gray-500">
                                 Ex porro, doloribus suscipit ipsam ullam, facere cumque maxime expedita asperiores
                             </p>
@@ -63,8 +63,8 @@ export default function SingleTeacherPage() {
                                 className="w-6 h-6"
                             />
                             <div className="">
-                                <h1 className="text-xl font-semibold">2</h1>
-                                <span className="text-sm text-gray-400">Branches</span>
+                                <h1 className="text-xl font-semibold">6th</h1>
+                                <span className="text-sm text-gray-400">Grade</span>
                             </div>
                         </div>
                         {/* card */}
@@ -73,7 +73,7 @@ export default function SingleTeacherPage() {
                                 className="w-6 h-6"
                             />
                             <div className="">
-                                <h1 className="text-xl font-semibold">90</h1>
+                                <h1 className="text-xl font-semibold">18</h1>
                                 <span className="text-sm text-gray-400">Lessons</span>
                             </div>
                         </div>
@@ -83,15 +83,15 @@ export default function SingleTeacherPage() {
                                 className="w-6 h-6"
                             />
                             <div className="">
-                                <h1 className="text-xl font-semibold">3</h1>
-                                <span className="text-sm text-gray-400">Classes</span>
+                                <h1 className="text-xl font-semibold">6A</h1>
+                                <span className="text-sm text-gray-400">Class</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* bottom */}
                 <div className="mt-4 rounded-md bg-white p-4 h-[800px]">
-                    <h1 className="text-xl font-semibold">Teacher's Schedule</h1>
+                    <h1 className="text-xl font-semibold">Student's Schedule</h1>
                     <BigCalendar />
                 </div>
             </div>
@@ -101,19 +101,19 @@ export default function SingleTeacherPage() {
                     <h1 className="text-xl font-semibold">Shortcuts</h1>
                     <div className="flex flex-wrap mt-4 gap-4 text-xs text-gray-500">
                         <Link href={"/"} className="p-3 rounded-md bg-mySkyLight">
-                            Teacher's Classes
+                            Student's Lessons
                         </Link>
                         <Link href={"/"} className="p-3 rounded-md bg-myPurpleLight">
-                            Teacher's Students
-                        </Link>
-                        <Link href={"/"} className="p-3 rounded-md bg-myYellowLight">
-                            Teacher's Lessons
+                            Student's Teachers
                         </Link>
                         <Link href={"/"} className="p-3 rounded-md bg-pink-50">
-                            Teacher's Exams
+                            Student's Exams
                         </Link>
                         <Link href={"/"} className="p-3 rounded-md bg-mySkyLight">
-                            Teacher's Assignments
+                            Student's Assignments
+                        </Link>
+                        <Link href={"/"} className="p-3 rounded-md bg-myYellowLight">
+                            Student's Results
                         </Link>
                     </div>
                 </div>

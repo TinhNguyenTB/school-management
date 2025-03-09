@@ -68,7 +68,7 @@ const StudentListPage = () => {
                 <td className="hidden md:table-cell">{item.grade}</td>
                 <td className="hidden lg:table-cell">{item.phone}</td>
                 <td className="hidden lg:table-cell">{item.address}</td>
-                <td className="flex items-center gap-2">
+                <td className="flex items-center gap-2 pt-5">
                     <Link href={`/list/students/${item.id}`}>
                         <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mySky">
                             <Image src={"/view.png"} alt="" width={16} height={16} />
