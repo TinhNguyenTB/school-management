@@ -927,20 +927,20 @@ export const calendarEvents = [
   {
     title: "English",
     allDay: false,
-    start: new Date(2025, 3, 7, 9, 0),
-    end: new Date(2025, 3, 7, 9, 45),
+    start: new Date(2025, 2, 10, 9, 0),
+    end: new Date(2025, 2, 10, 9, 45),
   },
   {
     title: "Biology",
     allDay: false,
-    start: new Date(2025, 3, 7, 10, 0),
-    end: new Date(2025, 3, 7, 10, 45),
+    start: new Date(2025, 2, 11, 10, 0),
+    end: new Date(2025, 2, 11, 10, 45),
   },
   {
     title: "Physics",
     allDay: false,
-    start: new Date(2025, 3, 7, 11, 0),
-    end: new Date(2025, 3, 7, 11, 45),
+    start: new Date(2025, 2, 12, 11, 0),
+    end: new Date(2025, 2, 12, 11, 45),
   },
   {
     title: "Chemistry",

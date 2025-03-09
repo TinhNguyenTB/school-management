@@ -64,7 +64,7 @@ const TeacherListPage = () => {
                     <Image src={item.photo} alt="" width={40} height={40}
                         className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
                     />
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col">
                         <h4 className="font-semibold">{item.name}</h4>
                         <p className="text-xs text-gray-500">{item?.email}</p>
                     </div>
@@ -74,11 +74,12 @@ const TeacherListPage = () => {
                 <td className="hidden md:table-cell">{item.classes.join(",")}</td>
                 <td className="hidden lg:table-cell">{item.phone}</td>
                 <td className="hidden lg:table-cell">{item.address}</td>
-                <td className="flex items-center gap-2">
-                    <Link href={`/list/teachers/${item.id}`}></Link>
-                    <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mySky">
-                        <Image src={"/view.png"} alt="" width={16} height={16} />
-                    </button>
+                <td className="flex items-center gap-2 pt-5">
+                    <Link href={`/list/teachers/${item.id}`}>
+                        <button className="w-7 h-7 flex items-center justify-center rounded-full bg-mySky">
+                            <Image src={"/view.png"} alt="" width={16} height={16} />
+                        </button>
+                    </Link>
                     {role === "admin" && (
                         <button className="w-7 h-7 flex items-center justify-center rounded-full bg-myPurple">
                             <Image src={"/delete.png"} alt="" width={16} height={16} />
