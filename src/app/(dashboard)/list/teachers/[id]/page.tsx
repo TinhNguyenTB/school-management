@@ -121,7 +121,7 @@ export default function SingleTeacherPage() {
                         <Link href={"/"} className="p-3 rounded-md bg-mySkyLight">
                             Teacher's Classes
                         </Link>
-                        <Link href={"/"} className="p-3 rounded-md bg-myPurpleLight">
+                        <Link href={`/list/students?teacherId=${"teacher2"}`} className="p-3 rounded-md bg-myPurpleLight">
                             Teacher's Students
                         </Link>
                         <Link href={"/"} className="p-3 rounded-md bg-myYellowLight">
