@@ -45,33 +45,9 @@ export const menuItems = [
                 visible: ["admin", "teacher"],
             },
             {
-                icon: "/exam.png",
-                label: "Exams",
-                href: "/list/exams",
-                visible: ["admin", "teacher", "student", "parent"],
-            },
-            {
-                icon: "/assignment.png",
-                label: "Assignments",
-                href: "/list/assignments",
-                visible: ["admin", "teacher", "student", "parent"],
-            },
-            {
-                icon: "/result.png",
-                label: "Results",
-                href: "/list/results",
-                visible: ["admin", "teacher", "student", "parent"],
-            },
-            {
                 icon: "/attendance.png",
                 label: "Attendance",
                 href: "/list/attendance",
-                visible: ["admin", "teacher", "student", "parent"],
-            },
-            {
-                icon: "/calendar.png",
-                label: "Events",
-                href: "/list/events",
                 visible: ["admin", "teacher", "student", "parent"],
             },
             {
