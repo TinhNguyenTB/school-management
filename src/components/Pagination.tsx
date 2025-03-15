@@ -6,12 +6,14 @@ import { useRouter } from "next/navigation";
 type PaginationProps = {
     page: number;
     count: number;
+    totalPages: number;
 }
 
-const Pagination = ({ page, count }: PaginationProps) => {
+const Pagination = ({ page, count, totalPages }: PaginationProps) => {
     const router = useRouter();
 
-    const totalPages = Math.ceil(count / ITEM_PER_PAGE); // lam tron len
+
+    // const totalPages = Math.ceil(count / ITEM_PER_PAGE); // lam tron len
 
     const changePage = (newPage: number) => {
         const params = new URLSearchParams(window.location.search);

@@ -2,10 +2,9 @@ import FormModal from "@/components/FormModal"
 import Pagination from "@/components/Pagination"
 import Table from "@/components/Table"
 import TableSearch from "@/components/TableSearch"
+import { sendRequest } from "@/lib/api"
 import { role } from "@/lib/data"
-import prisma from "@/lib/prisma"
 import { ITEM_PER_PAGE } from "@/lib/settings"
-import { Class, Prisma, Subject, Teacher } from "@prisma/client"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -91,44 +90,31 @@ const TeacherListPage = async ({
     const { page, ...queryParams } = searchParams;
     const p = page ? parseInt(page) : 1;
 
-    // URL params condition
-    const query: Prisma.TeacherWhereInput = {}
-    if (queryParams) {
-        for (const [key, value] of Object.entries(queryParams)) {
-            if (value !== undefined) {
-                switch (key) {
-                    case "classId":
-                        query.lessons = {
-                            some: {
-                                classId: parseInt(value)
-                            }
-                        }
-                        break;
-                    case "search":
-                        query.name = {
-                            contains: value,
-                            mode: 'insensitive'
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-        }
-    }
+    let data: Teacher[] = [];
+    let count = 0;
+    let totalPages = 0;
 
-    const [data, count] = await prisma.$transaction([
-        prisma.teacher.findMany({
-            where: query,
-            include: {
-                subjects: true,
-                classes: true
-            },
-            take: ITEM_PER_PAGE,
-            skip: ITEM_PER_PAGE * (p - 1)
-        }),
-        prisma.teacher.count({ where: query })
-    ])
+    const res = await sendRequest<IBackendRes<IModelPaginate<Teacher>>>({
+        url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1/teachers`,
+        method: 'GET',
+        queryParams: {
+            current: p,
+            pageSize: ITEM_PER_PAGE,
+            ...queryParams
+        },
+        nextOption: {
+            cache: "no-store"
+        }
+    })
+
+    if (res.data) {
+        data = res.data.result
+        count = res.data.meta.count
+        totalPages = res.data.meta.totalPages
+    }
+    else {
+        console.log("Fetch teachers error:", res)
+    }
 
     return (
         <div className="bg-white p-4 rounded-md flex-1 m-4 mt-0">
@@ -160,6 +146,7 @@ const TeacherListPage = async ({
             <Pagination
                 page={p}
                 count={count}
+                totalPages={totalPages}
             />
         </div>
     )

@@ -1,109 +1,123 @@
-export interface IRequest {
-    url: string;
-    method: string;
-    body?: { [key: string]: any };
-    queryParams?: any;
-    useCredentials?: boolean;
-    headers?: Record<string, string>;
-    nextOption?: RequestInit;
-}
+export { };
 
-export interface IBackendRes<T> {
-    error?: string | string[];
-    message: string;
-    statusCode: number | string;
-    data?: T;
-}
+declare global {
+    interface IRequest {
+        url: string;
+        method: string;
+        body?: { [key: string]: any };
+        queryParams?: any;
+        useCredentials?: boolean;
+        headers?: Record<string, string>;
+        nextOption?: RequestInit;
+    }
 
-export enum Gender {
-    MALE = "MALE",
-    FEMALE = "FEMALE",
-}
+    interface IBackendRes<T> {
+        error?: string | string[];
+        message: string;
+        statusCode: number | string;
+        data?: T;
+    }
 
-export enum Day {
-    MONDAY = "MONDAY",
-    TUESDAY = "TUESDAY",
-    WEDNESDAY = "WEDNESDAY",
-    THURSDAY = "THURSDAY",
-    FRIDAY = "FRIDAY",
-}
+    interface IModelPaginate<T> {
+        meta: {
+            current: number;
+            pageSize: number;
+            totalPages: number;
+            count: number;
+        },
+        result: T[]
+    }
 
-export interface Admin {
-    id: string;
-    username: string;
-}
+    enum Gender {
+        MALE = "MALE",
+        FEMALE = "FEMALE",
+    }
 
-export interface Student {
-    id: string;
-    username: string;
-    name: string;
-    surname: string;
-    email?: string;
-    phone?: string;
-    address: string;
-    img?: string;
-    birthday: Date;
-    gender: Gender;
-    classId: number;
-    gradeId: number;
-    createdAt: Date;
-}
+    enum Day {
+        MONDAY = "MONDAY",
+        TUESDAY = "TUESDAY",
+        WEDNESDAY = "WEDNESDAY",
+        THURSDAY = "THURSDAY",
+        FRIDAY = "FRIDAY",
+    }
 
-export interface Teacher {
-    id: string;
-    username: string;
-    name: string;
-    surname: string;
-    email?: string;
-    phone?: string;
-    address: string;
-    img?: string;
-    birthday: Date;
-    gender: Gender;
-    createdAt: Date;
-}
+    interface Admin {
+        id: string;
+        username: string;
+    }
 
-export interface Grade {
-    id: number;
-    level: number;
-}
+    interface Student {
+        id: string;
+        username: string;
+        name: string;
+        surname: string;
+        email?: string;
+        phone?: string;
+        address: string;
+        img?: string;
+        birthday: Date;
+        gender: Gender;
+        classId: number;
+        gradeId: number;
+        createdAt: Date;
+    }
 
-export interface Class {
-    id: number;
-    name: string;
-    capacity: number;
-    supervisorId?: string;
-    gradeId: number;
-}
+    interface Teacher {
+        id: string;
+        username: string;
+        name: string;
+        surname: string;
+        email?: string;
+        phone?: string;
+        address: string;
+        img?: string;
+        birthday: Date;
+        gender: Gender;
+        createdAt: Date;
+    }
 
-export interface Subject {
-    id: number;
-    name: string;
-}
+    interface Grade {
+        id: number;
+        level: number;
+    }
 
-export interface Lesson {
-    id: number;
-    name: string;
-    day: Day;
-    startTime: Date;
-    endTime: Date;
-    subjectId: number;
-    classId: number;
-    teacherId: string;
-}
+    interface Class {
+        id: number;
+        name: string;
+        capacity: number;
+        supervisorId?: string;
+        gradeId: number;
+    }
 
-export interface Attendance {
-    id: number;
-    date: Date;
-    present: boolean;
-    studentId: string;
-    lessonId: number;
-}
+    interface Subject {
+        id: number;
+        name: string;
+    }
 
-export interface Announcement {
-    id: number;
-    title: string;
-    description: string;
-    date: Date;
-    classId?: number;
-}
+    interface Lesson {
+        id: number;
+        name: string;
+        day: Day;
+        startTime: Date;
+        endTime: Date;
+        subjectId: number;
+        classId: number;
+        teacherId: string;
+    }
+
+    interface Attendance {
+        id: number;
+        date: Date;
+        present: boolean;
+        studentId: string;
+        lessonId: number;
+    }
+
+    interface Announcement {
+        id: number;
+        title: string;
+        description: string;
+        date: Date;
+        classId?: number;
+    }
+} 
